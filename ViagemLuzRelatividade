@@ -1,0 +1,132 @@
+<html>
+    
+    <head>
+        <title>Einstein</title>
+        <meta charset = "utf-8">
+    	<style type='text/css'>
+    	body{
+    		text-align:center;
+            background: #000;
+            color:white;
+    	}	
+
+    	</style>
+
+    <script type="text/javascript">
+    
+  var tempo,distancia,velocidade,tempo2;
+
+  function Einsten(){
+
+
+    distancia=document.forms.Myform.gravidade.value;
+    velocidade=document.forms.Myform.velocidade.value;
+
+
+    if( distancia == 57000000 || distancia == 108000000)
+    {
+
+        //planetas Mercúrio e Venus
+        //Calculo de distância 
+
+        if(velocidade==0.99){
+        tempo=(149000000-distancia)/18250385;
+        }
+
+        if(velocidade==0.80){
+        tempo=((149000000-distancia)/((18250385)/100 * 80));
+        }
+
+        if(velocidade==0.70){
+        tempo=((149000000-distancia)/((18250385)/100 * 70));    
+        }
+
+        if(velocidade==0.50){
+        tempo=((149000000-distancia)/((18250385)/100 * 50));    
+        }
+    }
+
+    else
+
+    {
+
+        //planetas todos os planetas exceto Mercúrio e Venus
+        //Calculo de distância 
+
+
+        if(velocidade==0.99){
+        tempo=(distancia-149000000)/18250385;
+        }
+
+        if(velocidade==0.80){
+        tempo=((distancia-149000000)/((18250385)/100 * 80));
+        }
+
+        if(velocidade==0.70){
+        tempo=((distancia-149000000)/((18250385)/100 * 70));    
+        }
+
+        if(velocidade==0.50){
+        tempo=((distancia-149000000)/((18250385)/100 * 50));    
+        }
+
+
+    }
+
+  
+        //Calculo da relatividade
+
+        tempo2=tempo/(1 - (Math.sqrt(velocidade)));
+
+
+    if(tempo > 0){
+    
+
+    alert("Tempo que você levou: "+tempo+" Minutos Luz. Você viajou "+tempo2+" Minutos para o futuro");
+
+
+}
+
+    write("Tempo viajado!!");
+
+
+}
+    </script>    
+
+        
+     </head>
+    
+    <body>
+
+    <h2>Tempo de viagem para alguns planetas do sistema solar</h2>    
+    <form  id="Myform">
+    
+    <select name="velocidade">
+    <option value="0.99">99%    
+    <option value="0.80">80%    
+    <option value="0.70">70%    
+    <option value="0.50">50%    
+    </select> da velocidade da luz.
+
+    <h3>Os tempos são válidos se o planeta selecionado estiver alinhado a Terra.</h3>
+
+    Viagem da Terra para<br><br>
+
+    Mercúrio<input type="Radio" name="gravidade" value="57000000">57 Milhões KM<br>
+    Venus<input type="Radio" name="gravidade" value="108000000">108 Milhões KM<br>
+    Marte<input type="Radio" name="gravidade" value="227000000">227 Milhões KM<br>
+    Júpiter<input type="Radio" name="gravidade" value="778000000">778 Milhões KM<br>
+    Saturno<input type="Radio" name="gravidade" value="1433000000">1.433 Bilhões KM<br>
+    Urano<input type="Radio" name="gravidade" value="2877000000">2.877 Bilhões KM<br>
+    Netuno<input type="Radio" name="gravidade" value="4498000000">4.498 Bilhões KM<br>
+
+
+    <br><br>
+    
+    <input type="submit" onclick="Einsten()" value="Calcular"><br>
+    
+   
+    </form>
+    </body>
+    
+    </html>
