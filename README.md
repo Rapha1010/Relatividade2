@@ -1,2 +1,3 @@
-# Relatividade2
-Verificar distância entre planetas e tempo viajado para o futuro
+# Relatividade
+JS
+Verificar distância entre planetas e tempo viajado para o <h1>futuro</h1>.
